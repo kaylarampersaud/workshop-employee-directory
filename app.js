@@ -9,3 +9,8 @@ import employees from "#db/employees";
 app.get("/", (req, res) => {
   res.send("Hello employees!");
 });
+
+// GET /employees endpoint
+app.get("/employees", (req, res) => {
+  res.json(employees);
+});
