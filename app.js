@@ -27,7 +27,7 @@ app.get("/employees/:id", (req, res) => {
   const { id } = req.params;
 
   // Find the employee with the given ID
-  const employee = employees.find((emp) => emp.id === id);
+  const employee = employees.find((emp) => emp.id === +id);
 
   if (!employee) {
     return res.status(404).send("Employee not found.");
