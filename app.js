@@ -15,6 +15,13 @@ app.get("/employees", (req, res) => {
   res.json(employees);
 });
 
+// GET /employees/random → random employee
+// Must be before /employees/:id
+app.get("/employees/random", (req, res) => {
+  const randomIndex = Math.floor(Math.random() * employees.length);
+  res.send(employees[randomIndex]);
+});
+
 // GET /employees/:id endpoint
 app.get("/employees/:id", (req, res) => {
   const { id } = req.params;
